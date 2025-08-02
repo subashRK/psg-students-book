@@ -1,10 +1,22 @@
 .navbar {
-	padding: 20px 50px;
+	padding: 0px 50px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	position: absolute;
 	top: 0%;
 	left: 0%;
-	backdrop-filter: blur(3px);
+	width: 100vw;
+	backdrop-filter: blur(5px);
+	text-transform: uppercase;
+}
+
+.navbar .title {
+	font-weight: 600;
+	font-size: 1.1rem;
+	word-spacing: 3px;
+	color: transparent;
+	background: radial-gradient(circle at top left, #fc9745 40%, #fcb045);
+	background-clip: text;
+	-webkit-background-clip: text;
 }

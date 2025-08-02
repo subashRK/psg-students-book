@@ -19,7 +19,7 @@ body {
 
 body {
 	color: var(--foreground);
-	background: var(--background);
+	background: radial-gradient(rgb(29, 29, 29), var(--background));
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
