@@ -23,7 +23,11 @@
 }
 
 .profile {
+	display: flex;
+	align-items: center;
+	gap: 15px;
 	transition: 0.15s filter;
+	font-size: 0.85rem;
 }
 
 .profile:hover {

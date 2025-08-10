@@ -16,10 +16,11 @@ export default function Navbar() {
 				<Link
 					href="https://github.com/subashRK"
 					className={styles.profile}
-					style={{ height: PROFILE_HEIGHT, width: PROFILE_HEIGHT }}
+					style={{ height: PROFILE_HEIGHT }}
 					title="See Github Page"
 					target="_blank"
 				>
+					Profile
 					<Image
 						src="/github-profile.jpg"
 						height={PROFILE_HEIGHT}
