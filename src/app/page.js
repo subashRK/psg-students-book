@@ -1,15 +1,15 @@
-import Image from "next/image"
 import styles from "./home.module.css"
 import Link from "next/link"
 
-const IMG_WIDTH = 800
+const IMG_WIDTH = 1000
 
 export default function Home() {
 	return (
 		<div>
 			<main className={styles.container}>
 				<h1 className={styles.title}>
-					Get to know about your seniors and juniors studying in the{" "}
+					Get to know about your seniors and juniors studying in the,
+					<br />
 					<a href="https://www.psgtech.edu/" target="_blank">
 						PSG College of Technology!
 					</a>
@@ -19,12 +19,9 @@ export default function Home() {
 					Go to Students Book &rarr;
 				</Link>
 
-				<Image
-					src="/phone-notebook.jpg"
-					width={IMG_WIDTH}
-					height={IMG_WIDTH / 1.5} // 1.5 is the aspect ratio
-					alt="Phone book"
-				/>
+				<h2 style={{ opacity: 0.9, textAlign: "center" }}>
+					For the Students of PSG Tech, by a student.
+				</h2>
 			</main>
 		</div>
 	)

@@ -1,11 +1,15 @@
 .title {
 	text-align: center;
 	font-size: 3rem;
-	margin-top: 60px;
+	margin-top: 80px;
 }
 
 .title a {
-	text-decoration: underline;
+	transition: filter 0.15s;
+}
+
+.title a:hover {
+	filter: brightness(0.85);
 }
 
 .container {
@@ -20,5 +24,37 @@
 }
 
 .gotoLink {
-	color: #4d4dff;
+	--c: #4d4dff;
+	background-color: transparent;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 25px;
+	border: 1px solid var(--c);
+	position: relative;
+	overflow: hidden;
+}
+
+.gotoLink::before {
+	content: "";
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	scale: 0 1;
+	transform-origin: left;
+	background-color: var(--c);
+	transition: scale 0.15s;
+	z-index: -1;
+}
+
+.gotoLink:hover::before {
+	scale: 1 1;
+}
+
+.mainImage {
+	border-radius: 3px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+	width: 80%;
+	height: calc(80% / 1.5);
 }
