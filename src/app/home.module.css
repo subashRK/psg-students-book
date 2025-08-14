@@ -24,11 +24,12 @@
 }
 
 .gotoLink {
-	--c: #4d4dff;
+	--c: orange;
+	--r: 25px;
 	background-color: transparent;
-	color: white;
+	color: var(--c);
 	padding: 10px 20px;
-	border-radius: 25px;
+	border-radius: var(--r);
 	border: 1px solid var(--c);
 	position: relative;
 	overflow: hidden;
@@ -42,12 +43,16 @@
 	top: 0%;
 	left: 0%;
 	scale: 0 1;
+	border-radius: var(--r);
 	transform-origin: left;
-	background-color: var(--c);
+	background: var(--c);
 	transition: scale 0.15s;
 	z-index: -1;
 }
 
+.gotoLink:hover {
+	color: white;
+}
 .gotoLink:hover::before {
 	scale: 1 1;
 }

@@ -15,7 +15,7 @@ export default function Home() {
 					</a>
 				</h1>
 
-				<Link className={styles.gotoLink} href="/">
+				<Link className={styles.gotoLink} href="/students">
 					Go to Students Book &rarr;
 				</Link>
 
