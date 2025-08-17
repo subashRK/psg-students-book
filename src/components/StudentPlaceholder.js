@@ -8,7 +8,6 @@ export default function StudentPlaceholder() {
 				<div></div>
 				<div></div>
 				<div></div>
-				<div></div>
 			</div>
 		</div>
 	)

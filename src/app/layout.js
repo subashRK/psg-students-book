@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
+import ProgressBar from "nextjs-toploader"
 
 const poppins = Poppins({
 	weight: "400",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body className={poppins.className}>
+				<ProgressBar color="orange" />
 				<Navbar />
 				{children}
 			</body>

@@ -27,7 +27,7 @@
 
 .student,
 .studentLoading {
-	--size: 128px;
+	--size: 168px;
 	display: flex;
 	align-items: start;
 	gap: 24px;
@@ -40,15 +40,36 @@
 	height: 100%;
 	object-fit: cover;
 	width: var(--size);
+	border-radius: 5px;
 }
 
 .student .content,
 .studentLoading .content {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
+	flex: 1;
+	padding: 16px 0px;
 }
 
-.studentLoading div {
-	background-color: gray;
+.studentLoading div:not(.content) {
+	background-color: #919398;
+	min-height: 15px;
+	border-radius: 5px;
+	animation: loading linear 1.5s infinite;
+}
+
+@keyframes loading {
+	0% {
+		background-color: #707176;
+	}
+
+	50% {
+		background-color: rgb(146, 146, 146);
+	}
+
+	100% {
+		background-color: #c0c0c5;
+	}
 }
