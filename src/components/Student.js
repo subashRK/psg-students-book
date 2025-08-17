@@ -2,7 +2,6 @@ import styles from "@/app/students/students.module.css"
 import Image from "next/image"
 
 export default async function Student({
-	src,
 	sname,
 	programme,
 	year,

@@ -11,7 +11,7 @@
 }
 
 .form select,
-.form input {
+.form input:not([type="range"]) {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -58,4 +58,9 @@
 
 .form button:disabled {
 	cursor: not-allowed;
+}
+
+.form input[type="range"] {
+	width: 100%;
+	accent-color: orange;
 }

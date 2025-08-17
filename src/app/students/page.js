@@ -1,18 +1,53 @@
 import styles from "@/app/students/students.module.css"
 import Student from "@/components/Student"
 
+const THREE_DIG_DEPT = [
+	"A",
+	"D",
+	"C",
+	"Z",
+	"E+",
+	"E",
+	"L",
+	"U",
+	"M",
+	"Y",
+	"P",
+	"R",
+	"B",
+	"H",
+	"I",
+	"T",
+	"E",
+	"M",
+	"P",
+	"X",
+	"N",
+	"S",
+]
+
 export default async function Students({ searchParams }) {
-	const { batch, dept } = await searchParams
+	const { batch, dept, range = 40, initialRollNo = 1 } = await searchParams
 
 	if (batch == null || dept == null)
-		return <div className="e-message">No Data Available!</div>
+		return <div className="e-message">Search something to get started!</div>
 
 	const students = []
 
-	for (let i = 0; i < 45; i++) {
+	for (
+		let i = parseInt(initialRollNo);
+		i < parseInt(initialRollNo) + parseInt(range);
+		i++
+	) {
 		const res = await fetch(
 			`https://edviewx.psgtech.ac.in/Hostel/Student/studDetails?rollno=${batch}${dept}${
-				i < 10 ? "0" + i : i
+				i < 10
+					? THREE_DIG_DEPT.includes(dept)
+						? "00" + i
+						: "0" + i
+					: THREE_DIG_DEPT.includes(dept) && i < 100
+					? "0" + i
+					: i
 			}`,
 			{ method: "GET", cache: "force-cache" }
 		)
@@ -35,18 +70,23 @@ export default async function Students({ searchParams }) {
 	return (
 		<div className={styles.listContainer}>
 			{students.length == 0 ? (
-				<div className="e-message">No Data Available!</div>
+				<div className="e-message">No data available!</div>
 			) : (
-				students.map(({ sname, rollno, programme, year, StudPic }) => (
-					<Student
-						sname={sname}
-						rollno={rollno}
-						programme={programme}
-						year={year}
-						key={rollno}
-						StudPic={StudPic}
-					/>
-				))
+				<>
+					<div>
+						Count: {students.length} (Dayscholars details are unavailable!)
+					</div>
+					{...students.map(({ sname, rollno, programme, year, StudPic }) => (
+						<Student
+							sname={sname}
+							rollno={rollno}
+							programme={programme}
+							year={year}
+							key={rollno}
+							StudPic={StudPic}
+						/>
+					))}
+				</>
 			)}
 		</div>
 	)
