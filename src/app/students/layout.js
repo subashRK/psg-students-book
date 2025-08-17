@@ -1,6 +1,5 @@
 import Search from "@/components/Search"
 import styles from "@/app/students/students.module.css"
-import Link from "next/link"
 
 export default function StudentsLayout({ children }) {
 	return (

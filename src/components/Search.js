@@ -5,14 +5,19 @@ import styles from "@/components/search.module.css"
 import { useRouter } from "nextjs-toploader/app"
 
 export default function Search() {
-	const [dept, setDept] = useState("TCS")
+	const [dept, setDept] = useState("PT")
 	const [batch, setBatch] = useState(2025)
 	const router = useRouter()
 
 	function handleSubmit(e) {
 		e.preventDefault()
 
-		router.push(`/students?dept=${dept}&batch=${batch}`)
+		const twoDigYear = batch - 2000
+		router.push(
+			`/students?dept=${dept}&batch=${
+				twoDigYear < 10 ? "0" + twoDigYear : twoDigYear
+			}`
+		)
 	}
 
 	function handleChange(e) {
@@ -42,11 +47,11 @@ export default function Search() {
 						onChange={handleChange}
 						required={true}
 					>
-						<option value="TCS">AMCS - TCS</option>
-						<option value="SS">AMCS - SS</option>
-						<option value="CS">AMCS - CS</option>
-						<option value="DS">AMCS - DS</option>
-						<option value="ME">B.E. - M.E.</option>
+						<option value="PT">AMCS - TCS</option>
+						<option value="PW">AMCS - SS</option>
+						<option value="PC">AMCS - CS</option>
+						<option value="PD">AMCS - DS</option>
+						<option value="M">B.E. - M.E.</option>
 						<option value="CE">B.E. - C.E.</option>
 					</select>
 				</div>

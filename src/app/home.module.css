@@ -1,7 +1,5 @@
 .title {
-	text-align: center;
-	font-size: 3rem;
-	margin-top: 80px;
+	font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .title a {
@@ -16,16 +14,46 @@
 	width: 100vw;
 	max-width: 1300px;
 	margin: auto;
-	padding: 35px;
+	padding: 25px;
+	padding-top: 0px;
+	display: flex;
+	justify-content: space-between;
+	gap: 32px;
+	margin-top: 96px;
+	gap: 40px;
+}
+
+.container h2 {
+	color: lightgray;
+	font-size: clamp(0.9rem, 1.8vw, 1.5rem);
+}
+
+.container img {
+	flex: 1;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+.container > div {
+	flex: 1;
+	min-height: 100%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	gap: 32px;
+	align-items: flex-start;
+	gap: 40px;
+	padding: 15px 0px;
+}
+
+.container > div > div {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
 }
 
 .gotoLink {
 	--c: orange;
-	--r: 25px;
+	--r: 15px;
 	background-color: transparent;
 	color: var(--c);
 	padding: 10px 20px;
