@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body className={poppins.className}>
-				<ProgressBar color="orange" />
+				<ProgressBar color="orange" showSpinner={false} />
 				<Navbar />
 				{children}
 			</body>

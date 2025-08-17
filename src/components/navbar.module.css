@@ -1,5 +1,5 @@
 .navbar {
-	padding: 0px 50px;
+	padding: 0px 25px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -8,7 +8,11 @@
 	left: 0%;
 	width: 100vw;
 	text-transform: uppercase;
-	backdrop-filter: blur(5px);
+	backdrop-filter: blur(3px);
+	background-color: rgba(10, 10, 10, 0.9);
+	border-bottom: 1px solid orange;
+	z-index: 999;
+	gap: 24px;
 }
 
 .navbar .title {
@@ -19,6 +23,7 @@
 	background: linear-gradient(to left, #fc9745, #fcb045);
 	background-clip: text;
 	-webkit-background-clip: text;
+	text-align: center;
 }
 
 .profile {
@@ -35,4 +40,19 @@
 
 .profile img {
 	border-radius: 50%;
+}
+
+@media only screen and (max-width: 400px) {
+	.navbar {
+		padding: 15px;
+	}
+
+	.navbar .title {
+		font-size: 0.9rem;
+	}
+
+	.profile {
+		font-size: 0.75rem;
+		gap: 8px;
+	}
 }

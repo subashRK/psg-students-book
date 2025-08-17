@@ -8,7 +8,7 @@ const PROFILE_HEIGHT = 40
 export default function Navbar() {
 	return (
 		<>
-			<nav style={{ height: HEIGHT }} className={styles.navbar}>
+			<nav style={{ minHeight: HEIGHT }} className={styles.navbar}>
 				<Link href="/" className={styles.title}>
 					PSG Students Book
 				</Link>

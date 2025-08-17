@@ -1,23 +1,36 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import styles from "@/components/search.module.css"
 import { useRouter } from "nextjs-toploader/app"
+import { useSearchParams } from "next/navigation"
 
 export default function Search() {
+	const [disabled, setDisabled] = useState(true)
 	const [dept, setDept] = useState("PT")
 	const [batch, setBatch] = useState(2025)
 	const router = useRouter()
+	const searchParams = useSearchParams()
+
+	useEffect(() => {
+		setDisabled(false)
+	}, [searchParams])
 
 	function handleSubmit(e) {
 		e.preventDefault()
 
 		const twoDigYear = batch - 2000
-		router.push(
-			`/students?dept=${dept}&batch=${
-				twoDigYear < 10 ? "0" + twoDigYear : twoDigYear
-			}`
+		const crtYear = twoDigYear < 10 ? "0" + twoDigYear : twoDigYear + ""
+
+		if (
+			searchParams.get("dept") === dept &&
+			searchParams.get("batch") === crtYear
 		)
+			return
+
+		setDisabled(true)
+
+		router.replace(`/students?dept=${dept}&batch=${crtYear}`)
 	}
 
 	function handleChange(e) {
@@ -71,7 +84,9 @@ export default function Search() {
 					/>
 				</div>
 
-				<button type="submit">Submit (Press Enter to Submit)</button>
+				<button type="submit" disabled={disabled}>
+					Submit (Press Enter to Submit)
+				</button>
 			</form>
 		</>
 	)

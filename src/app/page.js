@@ -18,7 +18,7 @@ export default function Home() {
 					<h2>For the Students of PSG Tech, by a student.</h2>
 				</div>
 
-				<Link className={styles.gotoLink} href="/students">
+				<Link className={styles.gotoLink} href="/students?dept=PT&batch=25">
 					Go to Students Book &rarr;
 				</Link>
 			</div>
