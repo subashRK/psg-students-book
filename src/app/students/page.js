@@ -40,7 +40,9 @@ export default async function Students({ searchParams }) {
 		i++
 	) {
 		const res = await fetch(
-			`https://edviewx.psgtech.ac.in/Hostel/Student/studDetails?rollno=${batch}${dept}${
+			`https://edviewx.psgtech.ac.in/Hostel/Student/studDetails?rollno=${
+				dept === "E+" ? batch.slice(0, 1) + "." + batch.slice(1, 2) : batch
+			}${dept}${
 				i < 10
 					? THREE_DIG_DEPT.includes(dept)
 						? "00" + i
