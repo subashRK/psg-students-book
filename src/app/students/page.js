@@ -27,7 +27,7 @@ const THREE_DIG_DEPT = [
 ]
 
 export default async function Students({ searchParams }) {
-	const { batch, dept, range = 40, initialRollNo = 1 } = await searchParams
+	const { batch, dept, range = 60, initialRollNo = 1 } = await searchParams
 
 	if (batch == null || dept == null)
 		return <div className="e-message">Search something to get started!</div>

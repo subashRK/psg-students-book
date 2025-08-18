@@ -9,7 +9,7 @@ export default function Search() {
 	const [disabled, setDisabled] = useState(true)
 	const [dept, setDept] = useState("PT")
 	const [batch, setBatch] = useState(2025)
-	const [range, setRange] = useState(40)
+	const [range, setRange] = useState(60)
 	const [initialRollNo, setInitialRollNo] = useState(1)
 	const router = useRouter()
 	const searchParams = useSearchParams()
@@ -170,7 +170,7 @@ export default function Search() {
 						onChange={handleChange}
 						min={1}
 						required={true}
-						max={40}
+						max={60}
 					/>
 				</div>
 
